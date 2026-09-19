@@ -4,29 +4,24 @@ using UnityEngine.AI;
 public class SimpleNavmeshCharacter : MonoBehaviour
 {
     [Tooltip("Drag NavMeshAgent component")]
-    public NavMeshAgent agent;
+    public NavMeshAgent Agent;
 
     [Tooltip("Shape Marker")]
-    public Transform destination;
+    public Transform Destination;
 
-    void Update()
+    private void Update()
     {
-
         if (Input.GetMouseButtonDown(1))
         {
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out RaycastHit hit))
             {
-
-                if (destination != null)
+                if (Destination != null)
                 {
-                    destination.position = hit.point;
+                    Destination.position = hit.point;
                 }
-
-                agent.SetDestination(hit.point);
+                Agent.SetDestination(hit.point);
             }
         }
     }
