@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4620240962810371399}
   - component: {fileID: 2043521257175205650}
   - component: {fileID: 1399322812222270688}
+  - component: {fileID: 4813054978334519656}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -137,3 +138,17 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &4813054978334519656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4941683065280499932}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c871e2ecd18c04f9bbafe0ff5fddc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SimpleNavmeshCharacter
+  Agent: {fileID: 1399322812222270688}
+  Destination: {fileID: 0}
