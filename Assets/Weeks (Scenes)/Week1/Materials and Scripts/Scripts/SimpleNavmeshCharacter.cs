@@ -1,18 +1,33 @@
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem; // Required for the input system in your professor's code
+using UnityEngine.InputSystem;
 using System.Collections;
 
 public class SimpleNavmeshCharacter : MonoBehaviour
 {
     [SerializeField] private NavMeshAgent agent;
 
+    [Tooltip("Jump In Seconds")]
+    [SerializeField] private float jumpDuration = 0.5f;
+
+    [Tooltip("Arc Jump")]
+    [SerializeField] private float jumpHeight = 1.5f;
+
     private bool isTraversing = false;
+
+    private void Start()
+    {
+
+        if (agent != null)
+        {
+            agent.autoTraverseOffMeshLink = false;
+        }
+    }
 
     private void Update()
     {
-        // 1. Point and Click Movement
-        if (Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame)
+
+        if (Mouse.current != null && Mouse.current.rightButton.wasPressedThisFrame && agent.isOnNavMesh)
         {
             Ray ray = Camera.main.ScreenPointToRay(Mouse.current.position.ReadValue());
             if (Physics.Raycast(ray, out RaycastHit hit))
@@ -22,32 +37,42 @@ public class SimpleNavmeshCharacter : MonoBehaviour
             }
         }
 
-        // 2. Manual Link Traversal (Handles the Elevator)
-        if (agent.isOnOffMeshLink && !isTraversing)
+        if (agent.isOnNavMesh && agent.isOnOffMeshLink && !isTraversing)
         {
-            StartCoroutine(TraverseLink());
+            StartCoroutine(TraverseLinkCoroutine());
         }
     }
 
-    private IEnumerator TraverseLink()
+    private IEnumerator TraverseLinkCoroutine()
     {
         isTraversing = true;
         OffMeshLinkData data = agent.currentOffMeshLinkData;
 
-        Vector3 startPos = agent.transform.position;
-        Vector3 endPos = data.endPos;
-        float duration = 1.0f; // Takes 1 second to ride the elevator down
-        float time = 0f;
+        float distance = Vector3.Distance(data.startPos, data.endPos);
 
-        // Smoothly move the agent from the top of the link to the bottom
-        while (time < 1f)
+        if (distance > 5f)
         {
-            time += Time.deltaTime / duration;
-            agent.transform.position = Vector3.Lerp(startPos, endPos, time);
-            yield return null;
+
+            agent.transform.position = data.endPos;
+        }
+        else
+        {
+
+            float time = 0f;
+            Vector3 startPos = agent.transform.position;
+
+            while (time < 1f)
+            {
+                time += Time.deltaTime / jumpDuration;
+
+                float yOffset = jumpHeight * 4.0f * (time - time * time);
+
+                agent.transform.position = Vector3.Lerp(startPos, data.endPos, time) + new Vector3(0, yOffset, 0);
+
+                yield return null;
+            }
         }
 
-        // Crucial: Tell the agent it finished crossing the link so it can continue walking
         agent.CompleteOffMeshLink();
         isTraversing = false;
     }

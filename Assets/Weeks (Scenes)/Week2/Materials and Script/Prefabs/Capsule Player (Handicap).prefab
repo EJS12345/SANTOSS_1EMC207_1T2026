@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1701319855325779575
+--- !u!1 &331587787968741141
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3966881293869342200}
-  - component: {fileID: 449191829953955720}
-  - component: {fileID: 4230651984012187555}
-  - component: {fileID: 6590623570257854550}
-  - component: {fileID: 8749226599771311037}
-  - component: {fileID: 3050573289810588562}
+  - component: {fileID: 5132430193745952080}
+  - component: {fileID: 5778967321367677549}
+  - component: {fileID: 102391112991863980}
+  - component: {fileID: 8526225625454781645}
+  - component: {fileID: 1118370758219589903}
+  - component: {fileID: 1515496603952863361}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Capsule Player (Handicap)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &3966881293869342200
+  m_IsActive: 1
+--- !u!4 &5132430193745952080
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701319855325779575}
+  m_GameObject: {fileID: 331587787968741141}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.92921, y: 0.99, z: 2.05982}
+  m_LocalPosition: {x: -18.04, y: 0.93, z: 0.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &449191829953955720
+--- !u!33 &5778967321367677549
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701319855325779575}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &4230651984012187555
+  m_GameObject: {fileID: 331587787968741141}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &102391112991863980
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701319855325779575}
+  m_GameObject: {fileID: 331587787968741141}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -93,13 +93,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &6590623570257854550
+--- !u!136 &8526225625454781645
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701319855325779575}
+  m_GameObject: {fileID: 331587787968741141}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -112,20 +112,20 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
+  m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!195 &8749226599771311037
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!195 &1118370758219589903
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701319855325779575}
+  m_GameObject: {fileID: 331587787968741141}
   m_Enabled: 1
   m_AgentTypeID: -902729914
-  m_Radius: 0.5000001
+  m_Radius: 0.5
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -138,17 +138,17 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 3
   m_ObstacleAvoidanceType: 4
---- !u!114 &3050573289810588562
+--- !u!114 &1515496603952863361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701319855325779575}
+  m_GameObject: {fileID: 331587787968741141}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62c871e2ecd18c04f9bbafe0ff5fddc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleNavmeshCharacter
-  Agent: {fileID: 8749226599771311037}
-  Destination: {fileID: 0}
+  agent: {fileID: 1118370758219589903}
+  destination: {fileID: 0}
