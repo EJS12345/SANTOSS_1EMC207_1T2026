@@ -1854,7 +1854,7 @@ MonoBehaviour:
   m_IsOverridingCost: 0
   m_Bidirectional: 1
   m_AutoUpdatePosition: 0
-  m_Area: 0
+  m_Area: 2
 --- !u!4 &1413145296
 Transform:
   m_ObjectHideFlags: 0
@@ -2293,7 +2293,6 @@ MonoBehaviour:
   closedState: {fileID: 970998049}
   target: {fileID: 0}
   enableRaycastingCheck: 0
-  turnRate: 1
 --- !u!1 &1965347332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,10 +2627,6 @@ PrefabInstance:
     - target: {fileID: 4941683065280499932, guid: 367cbc9763d9fba4fa79a96932c4a78f, type: 3}
       propertyPath: m_Name
       value: Capsule Player (Humanoid)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4941683065280499932, guid: 367cbc9763d9fba4fa79a96932c4a78f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

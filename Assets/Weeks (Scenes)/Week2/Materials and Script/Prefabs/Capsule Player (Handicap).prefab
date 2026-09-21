@@ -136,7 +136,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 2
   m_BaseOffset: 1
-  m_WalkableMask: 3
+  m_WalkableMask: 11
   m_ObstacleAvoidanceType: 4
 --- !u!114 &1515496603952863361
 MonoBehaviour:
@@ -151,4 +151,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SimpleNavmeshCharacter
   agent: {fileID: 1118370758219589903}
-  destination: {fileID: 0}
+  jumpDuration: 0.5
+  jumpHeight: 1.5
