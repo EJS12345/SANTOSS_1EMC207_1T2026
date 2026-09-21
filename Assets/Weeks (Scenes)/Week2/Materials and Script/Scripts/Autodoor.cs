@@ -3,13 +3,13 @@ using System.Collections;
 
 public class AutoDoor : MonoBehaviour
 {
-    [Tooltip("Drag the physical Door object here")]
+    [Tooltip("Drag the physical door object here")]
     [SerializeField] private Transform door;
 
     [SerializeField] private float interval = 3f;
     [SerializeField] private float moveDuration = 0.5f;
 
-    [Tooltip("Drag the OpenedPosition Transform here")]
+    [Tooltip("Drag the Opened Position Transform here")]
     [SerializeField] private Transform openedState;
 
     [Tooltip("Drag the ClosedPosition Transform here")]
