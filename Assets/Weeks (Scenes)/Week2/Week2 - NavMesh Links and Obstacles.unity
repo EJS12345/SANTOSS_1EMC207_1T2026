@@ -2661,10 +2661,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Capsule Player (Humanoid)
       objectReference: {fileID: 0}
-    - target: {fileID: 4941683065280499932, guid: 367cbc9763d9fba4fa79a96932c4a78f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
